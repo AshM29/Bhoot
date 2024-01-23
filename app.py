@@ -31,12 +31,12 @@ if uploaded_file is not None:
   image=Image.open(uploaded_file)
   st.image(image,caption='Uploaded File',use_column_width=True)
 
-sub=st.button('What is their story ?')
+sub=st.button('TELL ME THEIR STORY')
 input_prompt="""You are a storywriter and an expert in sentiment analysis. We will upload an image and you will have to write a horror story based on the image's content"""
 
 if sub:
-  with st.spinner('Wait'):
+  with st.spinner('cooking up the tale...'):
     image_data=input_image_details(uploaded_file)
     response=get_gemini_response(input_prompt,image_data,input)
-    st.subheader('Here is your story')
+    st.subheader('STORYTIME:')
     st.text_area(label="",value=response,height=500)
