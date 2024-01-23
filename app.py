@@ -12,8 +12,9 @@ model=genai.GenerativeModel('gemini-pro-vision')
 def get_gemini_response(input,image_data,user_prompt):
   response=model.generate_content([input,image_data[0],user_prompt])
   return response.text
-with st.sidebar:  
-  st.image('skull.jpg',caption='Skull decoration')
+with st.sidebar: 
+  st.title("Getting the spooks yet ?")
+  st.image('skull.jpg')
 def input_image_details(uploaded_file):
   if uploaded_file is not None:
     bytes_data=uploaded_file.getvalue()
